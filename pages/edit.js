@@ -116,35 +116,7 @@ const Edit = () => {
     setData({ ...data, socials: copySocials });
   };
 
-  // Resume
-
-  const handleAddExperiences = () => {
-    setData({
-      ...data,
-      resume: {
-        ...data.resume,
-        experiences: [
-          ...data.resume.experiences,
-          {
-            id: uuidv4(),
-            dates: "Enter Dates",
-            type: "Full Time",
-            position: "Frontend Engineer at X",
-            bullets: ["Worked on the frontend of a React application"],
-          },
-        ],
-      },
-    });
-  };
-
-  const handleEditExperiences = (index, editExperience) => {
-    let copyExperiences = data.resume.experiences;
-    copyExperiences[index] = { ...editExperience };
-    setData({
-      ...data,
-      resume: { ...data.resume, experiences: copyExperiences },
-    });
-  };
+  
 
   return (
     <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
@@ -192,12 +164,7 @@ const Edit = () => {
             >
               Social
             </Button>
-            <Button
-              onClick={() => setCurrentTabs("RESUME")}
-              type={currentTabs === "RESUME" && "primary"}
-            >
-              Resume
-            </Button>
+            
           </div>
         </div>
         {/* HEADER */}
